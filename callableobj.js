@@ -27,9 +27,23 @@ console.log(name2(function(){return "This is giving correct output"}))
 
 function runExpr(){
     var a=10;
-//here a and b are temporary symbols
+//here a and b are temporary symbols and garbage collections clears this temporary symbols
+    //embedded function
     function add(b){
         return a+b
     }
     console.log(add(50),add(80))
+}
+
+//inferred globals and Scope
+//this is global variable
+var a =10
+
+function runExpression(){
+    
+    var b=80
+    function addition(){
+        return a+b
+    }
+    console.log(addition())
 }
